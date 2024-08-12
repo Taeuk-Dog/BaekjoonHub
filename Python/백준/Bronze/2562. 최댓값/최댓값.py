@@ -1,14 +1,5 @@
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
-e = int(input())
-f = int(input())
-g = int(input())
-h = int(input())
-i = int(input())
+a = [int(input()) for i in range(9)]
 
-max = (max(a,b,c,d,e,f,g,h,i))
-print(max)
-list = [a,b,c,d,e,f,g,h,i]
-print(list.index(max)+1)
+max_ = max(a)
+print(max_)
+print(a.index(max_)+1)
