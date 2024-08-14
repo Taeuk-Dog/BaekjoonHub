@@ -1,0 +1,11 @@
+-- 코드를 작성해주세요
+select
+    ID, LENGTH
+FROM
+    FISH_INFO 
+WHERE
+    IFNULL(LENGTH, 10)
+ORDER BY
+    LENGTH DESC, ID ASC
+    
+LIMIT 10
