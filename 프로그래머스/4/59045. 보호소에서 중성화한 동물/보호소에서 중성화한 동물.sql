@@ -1,21 +1,16 @@
--- 코드를 입력하세요
-SELECT
-A.ANIMAL_ID,
-B.ANIMAL_TYPE,
-A.NAME
+select
+    a.ANIMAL_ID,
+    b.ANIMAL_TYPE,
+    a.NAME
 FROM
-ANIMAL_INS A
+     ANIMAL_INS a
 JOIN
-ANIMAL_OUTS B
+    ANIMAL_OUTS b
 ON
-A.ANIMAL_ID = B.ANIMAL_ID
-
+    a.ANIMAL_ID = b.ANIMAL_ID
 WHERE
-# SEX_UPON_INTAKE LIKE 'Spayed ' 
-SUBSTRING_INDEX(SEX_UPON_INTAKE, ' ', 1) =  'Intact' AND
-(SUBSTRING_INDEX(SEX_UPON_OUTCOME, ' ', 1) =  'Spayed' OR
-SUBSTRING_INDEX(SEX_UPON_OUTCOME, ' ', 1) =  'Neutered' )
-# SQL 은 인덱스 1부터 시작이랍니다.
-
+    SUBSTRING_index(SEX_UPON_INTAKE, ' ', 1) = 'Intact' and
+    (SUBSTRING_index(SEX_UPON_OUTCOME, ' ', 1) = 'Spayed' or
+    SUBSTRING_index(SEX_UPON_OUTCOME, ' ', 1) = 'Neutered')
 ORDER BY
-ANIMAL_ID
+    ANIMAL_ID
